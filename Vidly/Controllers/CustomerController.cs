@@ -14,20 +14,28 @@ namespace Vidly.Controllers
         //[Route("Customers/Index") ]
         public ActionResult Index()
         {
-            var customers = new List<Customer>
-            {
-                 new Customer { Id =0, Name = "Ernersto Guevara" }
-                ,new Customer { Id=1, Name = "Pablo Gomez"}
-            };
-            var viewModel = new CustomerIndexViewModel
-            {
-                Customers = customers
-            };
-            return View(viewModel);
+            var customers = GetCustomers();
+            return View(customers);
         }
-        public ActionResult Details(Customer customer)
+        public ActionResult Details(int id)
         {
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+
+            if (customer == null) 
+                return HttpNotFound();
+
             return View(customer);
         }
+        private IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>
+            {
+                new Customer { Id =0, Name = "Ernersto Guevara" }
+                ,new Customer { Id=1, Name = "Pablo Gomez"}
+            };
+
+        }
+
+            
     }
 }

@@ -1,24 +1,27 @@
-﻿@model Vidly.ViewModels.CustomerIndexViewModel
+﻿@model IEnumerable<Vidly.Models.Customer>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Customers</h2>
-@if(!Model.Customers.Any())
+@if (!Model.Any())
 {
-        //se muestra que no hay clientes
         <h2>No hay clientes</h2>
 }
 else
 {
-    <table class=“table table-bordered table-hover”>
-        <tr><th>Customer</th></tr>
-        @foreach (var customer in Model.Customers)
-        {
-            <tr><td>@Html.ActionLink(@customer.Name, "Details", "Customers", @customer, null) </td></tr>
-            //no se como hacer para que no muestre el nombre por el url, 
-            //tal vez la solucion seria pasae los parametros del objeto por post
-            //y si esa es la solucion, ¿como se hace?
-        }
-    </table>
+     <table class="table table-bordered table-hover">     
+             <thead>
+                 <tr><th>Customer</th></tr>
+             </thead>
+             <tbody>
+                 @foreach (var customer in Model)
+                 {
+                     <tr>
+                         <td>@Html.ActionLink(@customer.Name, "Details", "Customers", new { id = customer.Id }, null) </td>
+                     </tr>
+                 }
+             </tbody>
+         </table>
 }
 
