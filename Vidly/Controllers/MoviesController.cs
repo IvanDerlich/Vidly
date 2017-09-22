@@ -13,18 +13,19 @@ namespace Vidly.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                 new Movie() { Id = 0, Name = "La pistola desnuda" }
-                ,new Movie() {Id = 1, Name = "Batman" }
-            };
-            var viewModel = new MovieIndexViewModel
-            {
-                Movies = movies
-            };
-            return View(viewModel);
-        }
 
+            var movie = GetMovie();
+            return View(movie);
+        }
+        public ActionResult Details(int id)
+        {
+            var movie = GetMovie().SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
+        }
 
         public ActionResult Random()
         {
@@ -41,5 +42,15 @@ namespace Vidly.Controllers
             };
             return View(viewModel);
         }
+        private IEnumerable<Movie> GetMovie()
+        {
+            return new List<Movie> {
+                new Movie  { Name = "Sick City" },
+                new Movie { Name = "The Matrix" }
+            };
+        }
+
+
+
     }
 }
