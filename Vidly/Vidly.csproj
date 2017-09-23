@@ -48,6 +48,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -119,12 +127,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -179,10 +181,44 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709230214409_InitialModel.cs" />
+    <Compile Include="Migrations\201709230214409_InitialModel.Designer.cs">
+      <DependentUpon>201709230214409_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231629333_AddIsSuscribedToCustomer.cs" />
+    <Compile Include="Migrations\201709231629333_AddIsSuscribedToCustomer.Designer.cs">
+      <DependentUpon>201709231629333_AddIsSuscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231646013_AddMembershipType.cs" />
+    <Compile Include="Migrations\201709231646013_AddMembershipType.Designer.cs">
+      <DependentUpon>201709231646013_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231700160_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201709231700160_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201709231700160_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231718383_ApplyNotationsTuCustomerName.cs" />
+    <Compile Include="Migrations\201709231718383_ApplyNotationsTuCustomerName.Designer.cs">
+      <DependentUpon>201709231718383_ApplyNotationsTuCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231830049_Agregado Nombre a Customer Type.cs" />
+    <Compile Include="Migrations\201709231830049_Agregado Nombre a Customer Type.Designer.cs">
+      <DependentUpon>201709231830049_Agregado Nombre a Customer Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231836116_Populate Name Column of MembershipTypes.cs" />
+    <Compile Include="Migrations\201709231836116_Populate Name Column of MembershipTypes.Designer.cs">
+      <DependentUpon>201709231836116_Populate Name Column of MembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231857185_Corregir Populate Name Column of MembershipTypes.cs" />
+    <Compile Include="Migrations\201709231857185_Corregir Populate Name Column of MembershipTypes.Designer.cs">
+      <DependentUpon>201709231857185_Corregir Populate Name Column of MembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -258,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -266,6 +303,32 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709230214409_InitialModel.resx">
+      <DependentUpon>201709230214409_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231629333_AddIsSuscribedToCustomer.resx">
+      <DependentUpon>201709231629333_AddIsSuscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231646013_AddMembershipType.resx">
+      <DependentUpon>201709231646013_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231700160_PopulateMembershipTypes.resx">
+      <DependentUpon>201709231700160_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231718383_ApplyNotationsTuCustomerName.resx">
+      <DependentUpon>201709231718383_ApplyNotationsTuCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231830049_Agregado Nombre a Customer Type.resx">
+      <DependentUpon>201709231830049_Agregado Nombre a Customer Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231836116_Populate Name Column of MembershipTypes.resx">
+      <DependentUpon>201709231836116_Populate Name Column of MembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231857185_Corregir Populate Name Column of MembershipTypes.resx">
+      <DependentUpon>201709231857185_Corregir Populate Name Column of MembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
