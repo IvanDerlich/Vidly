@@ -213,9 +213,34 @@
     <Compile Include="Migrations\201709231857185_Corregir Populate Name Column of MembershipTypes.Designer.cs">
       <DependentUpon>201709231857185_Corregir Populate Name Column of MembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709232032254_Agregar Campo BirthDate a la tabla Customer.cs" />
+    <Compile Include="Migrations\201709232032254_Agregar Campo BirthDate a la tabla Customer.Designer.cs">
+      <DependentUpon>201709232032254_Agregar Campo BirthDate a la tabla Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709232315002_Agregar Campos Tabla Movies.cs" />
+    <Compile Include="Migrations\201709232315002_Agregar Campos Tabla Movies.Designer.cs">
+      <DependentUpon>201709232315002_Agregar Campos Tabla Movies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709232338494_Borrar Columna Genre Tabla Movies.cs" />
+    <Compile Include="Migrations\201709232338494_Borrar Columna Genre Tabla Movies.Designer.cs">
+      <DependentUpon>201709232338494_Borrar Columna Genre Tabla Movies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240019310_Agregar Tabla Genres.cs" />
+    <Compile Include="Migrations\201709240019310_Agregar Tabla Genres.Designer.cs">
+      <DependentUpon>201709240019310_Agregar Tabla Genres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240059214_Poblar la tabla Genre.cs" />
+    <Compile Include="Migrations\201709240059214_Poblar la tabla Genre.Designer.cs">
+      <DependentUpon>201709240059214_Poblar la tabla Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709240142083_Tabla Movies.cs" />
+    <Compile Include="Migrations\201709240142083_Tabla Movies.Designer.cs">
+      <DependentUpon>201709240142083_Tabla Movies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -328,6 +353,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709231857185_Corregir Populate Name Column of MembershipTypes.resx">
       <DependentUpon>201709231857185_Corregir Populate Name Column of MembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709232032254_Agregar Campo BirthDate a la tabla Customer.resx">
+      <DependentUpon>201709232032254_Agregar Campo BirthDate a la tabla Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709232315002_Agregar Campos Tabla Movies.resx">
+      <DependentUpon>201709232315002_Agregar Campos Tabla Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709232338494_Borrar Columna Genre Tabla Movies.resx">
+      <DependentUpon>201709232338494_Borrar Columna Genre Tabla Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240019310_Agregar Tabla Genres.resx">
+      <DependentUpon>201709240019310_Agregar Tabla Genres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240059214_Poblar la tabla Genre.resx">
+      <DependentUpon>201709240059214_Poblar la tabla Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709240142083_Tabla Movies.resx">
+      <DependentUpon>201709240142083_Tabla Movies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
