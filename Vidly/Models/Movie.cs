@@ -10,20 +10,20 @@ namespace Vidly.Models
     {
         
         public int Id { get; set; }
+
         [Required]
         [StringLength(255)]
-        public string Name { get; set; }
-        //public int MyProperty { get; set; }
-        //[Required]
-        //[StringLength(50)]
-        //public short Genre { get; set; }
+        public string Name { get; set; }      
+ 
+        public DateTime ReleaseDate { get; set; }
+
+        public DateTime DateAdded{ get; set; }
+  
+        public byte NumberInStock{ get; set; }
+
+        //Claves Foraneas
         [Required]
-        [StringLength(50)]
-        public string ReleaseDate { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string DateAdded{ get; set; }
-        [Required]
-        public short NumberInStock{ get; set; }
+        public Genre Genre { get; set; }
+        public byte GenreID { get; set; }
     }
 }

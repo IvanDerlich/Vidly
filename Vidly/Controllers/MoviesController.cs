@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 
+using System.Data.Entity;
+
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
@@ -23,12 +25,12 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             //var movie = _context.Movies.;
-            var movie = GetMovie();
+            var movie = _context.Movies.Include(g => g.Genre).ToList();
             return View(movie);
         }
         public ActionResult Details(int id)
         {
-            var movie = GetMovie().SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(g => g.Genre).SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
                 return HttpNotFound();
@@ -36,29 +38,29 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "La pistola desnuda" };
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Pepe Pistola" },
-                new Customer { Name = "Nancy Sinaola" }
-            };
-            var viewModel = new RandomViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-            return View(viewModel);
-        }
-        private IEnumerable<Movie> GetMovie()
-        {
-            return new List<Movie> {
-                new Movie  { Name = "Sick City" },
-                new Movie { Name = "The Matrix" }
-            };
-        }
 
+        //private IEnumerable<Movie> GetMovie()
+        //{
+        //    return new List<Movie> {
+        //        new Movie  { Name = "Sick City" },
+        //        new Movie { Name = "The Matrix" }
+        //    };
+        //}
+        //public ActionResult Random()
+        //{
+        //    var movie = new Movie() { Name = "La pistola desnuda" };
+        //    var customers = new List<Customer>
+        //    {
+        //        new Customer {Name = "Pepe Pistola" },
+        //        new Customer { Name = "Nancy Sinaola" }
+        //    };
+        //    var viewModel = new RandomViewModel
+        //    {
+        //        Movie = movie,
+        //        Customers = customers
+        //    };
+        //    return View(viewModel);
+        //}
 
 
     }

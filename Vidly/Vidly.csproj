@@ -49,11 +49,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -237,6 +237,18 @@
     <Compile Include="Migrations\201709240142083_Tabla Movies.Designer.cs">
       <DependentUpon>201709240142083_Tabla Movies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709242228253_Edicion Movies - Agregadas referencias a tabla Genre.cs" />
+    <Compile Include="Migrations\201709242228253_Edicion Movies - Agregadas referencias a tabla Genre.Designer.cs">
+      <DependentUpon>201709242228253_Edicion Movies - Agregadas referencias a tabla Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709242234358_Ed. Tab. Movies - Borrado Columna Agregada por error .cs" />
+    <Compile Include="Migrations\201709242234358_Ed. Tab. Movies - Borrado Columna Agregada por error .Designer.cs">
+      <DependentUpon>201709242234358_Ed. Tab. Movies - Borrado Columna Agregada por error .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709242316379_Espejar el formato de mi BD al de Mosh.cs" />
+    <Compile Include="Migrations\201709242316379_Espejar el formato de mi BD al de Mosh.Designer.cs">
+      <DependentUpon>201709242316379_Espejar el formato de mi BD al de Mosh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -311,7 +323,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
@@ -371,6 +382,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709240142083_Tabla Movies.resx">
       <DependentUpon>201709240142083_Tabla Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242228253_Edicion Movies - Agregadas referencias a tabla Genre.resx">
+      <DependentUpon>201709242228253_Edicion Movies - Agregadas referencias a tabla Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242234358_Ed. Tab. Movies - Borrado Columna Agregada por error .resx">
+      <DependentUpon>201709242234358_Ed. Tab. Movies - Borrado Columna Agregada por error .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242316379_Espejar el formato de mi BD al de Mosh.resx">
+      <DependentUpon>201709242316379_Espejar el formato de mi BD al de Mosh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
