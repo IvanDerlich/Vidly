@@ -21,6 +21,10 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+        public ActionResult New()
+        { 
+            return View();
+        }
         // GET: Customer
         //[Route("Customers/Index") ]
         public ActionResult Index()
@@ -34,7 +38,7 @@ namespace Vidly.Controllers
         public ActionResult Details(int id)
         {
 
-            var customer = _context.Customers.Include(mem => mem.MembershipType).SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.Include(mem => mem.MembershipType).SingleOrDefault(c => c.Id == id);            
             
             if (customer == null) 
                 return HttpNotFound();
