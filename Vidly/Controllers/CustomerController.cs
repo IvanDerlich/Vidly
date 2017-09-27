@@ -22,8 +22,15 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
         public ActionResult New()
-        { 
-            return View();
+        {
+            var membershipTypes = _context.MembershipTypes;
+
+            var viewModel = new NewCustomerViewModel();
+
+            viewModel.MembershipTypes = membershipTypes;
+
+            return View(viewModel);
+
         }
         // GET: Customer
         //[Route("Customers/Index") ]

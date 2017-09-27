@@ -262,6 +262,7 @@
     <Compile Include="ViewModels\CustomerIndexViewModel.cs" />
     <Compile Include="ViewModels\MovieIndexViewModel.cs" />
     <Compile Include="ViewModels\MoviesIndexViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
