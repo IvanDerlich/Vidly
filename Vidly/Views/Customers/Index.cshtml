@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Customers</h2>
+<p>
+    @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+</p>
+@* ^^ ¿Porque tengo que usar los tags <p></p>? ¿Sera para hacer el diseño responsive que hace bootstrapp? *@
+
 @if (!Model.Any())
 {
         <h2>No hay clientes</h2>
