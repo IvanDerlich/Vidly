@@ -21,7 +21,7 @@ namespace Vidly.Models
   
         public byte NumberInStock{ get; set; }
 
-        //Claves Foraneas
+        //Claves Foraneas,,,,,
         [Required]
         public Genre Genre { get; set; }
         public byte GenreID { get; set; }
