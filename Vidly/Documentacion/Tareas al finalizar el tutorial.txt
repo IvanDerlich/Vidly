@@ -1,0 +1,1 @@
+-Ver porque no anda el CSS con los colores de la validacion de los campos del formulario de clientes

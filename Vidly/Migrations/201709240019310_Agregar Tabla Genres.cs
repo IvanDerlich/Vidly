@@ -11,7 +11,7 @@ namespace Vidly.Migrations
                 "dbo.Genres",
                 c => new
                     {
-                        Id = c.Short(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.Id);

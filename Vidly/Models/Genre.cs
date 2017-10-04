@@ -1,16 +1,19 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Vidly.Models
+﻿namespace Vidly.Models
 {
-    public class Genre
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Genre
     {
-        public int Id { get; set; }
+
+         public int Id { get; set; }
+
         [Required]
         [StringLength(50)]
-        public String Name { get; set; }
+        public string Name { get; set; }
+   
     }
 }

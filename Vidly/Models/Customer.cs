@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace Vidly.Models
+﻿namespace Vidly.Models
 {
-    public class Customer
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Customer
     {
         public int Id { get; set; }
 
@@ -16,13 +16,10 @@ namespace Vidly.Models
 
         public bool IsSuscribedToNewsLetter { get; set; }
 
-        public MembershipType MembershipType { get; set; }
-
-        [Display(Name = "Membership type")]
         public byte MembershipTypeId { get; set; }
 
-        [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
 
+        public virtual MembershipType MembershipType { get; set; }
     }
 }

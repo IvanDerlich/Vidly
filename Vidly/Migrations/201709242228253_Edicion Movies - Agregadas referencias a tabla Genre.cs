@@ -7,10 +7,9 @@ namespace Vidly.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Movies", "MyProperty", c => c.Int(nullable: false));
             AddColumn("dbo.Movies", "Genre_Id", c => c.Int());
             CreateIndex("dbo.Movies", "Genre_Id");
-            AddForeignKey("dbo.Movies", "Genre_Id", "dbo.Genres", "Id");
+            AddForeignKey("dbo.Movies", "Genre_Id", "dbo.Genres", "Id");//aca tengo un problema
         }
         
         public override void Down()
@@ -18,7 +17,6 @@ namespace Vidly.Migrations
             DropForeignKey("dbo.Movies", "Genre_Id", "dbo.Genres");
             DropIndex("dbo.Movies", new[] { "Genre_Id" });
             DropColumn("dbo.Movies", "Genre_Id");
-            DropColumn("dbo.Movies", "MyProperty");
         }
     }
 }
